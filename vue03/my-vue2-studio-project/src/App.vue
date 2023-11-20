@@ -1,45 +1,49 @@
 <template>
-  <div id="app">
-<!--    alt="Vue logo"当图片无法显示或者对于图像描述不清时，替代文本会显示在图片位置-->
-<!--    <img alt="Vue logo" src="./assets/logo.png">-->
-<!--    <HelloWorld msg="欢迎来到新世界" zsj="赵水江"/>-->
-<!--    <TestWindow/>-->
-<!--    <router-link to="/">Home</router-link>-->
-<!--    <router-link to="/test">About</router-link>-->
-<!--    <router-view></router-view>-->
-    <div>
-      <router-link to="#/find" class="active">发现音乐</router-link>
-      <router-link to="#/my">我的音乐</router-link>
-      <router-link to="#/friend">朋友的音乐</router-link>
+  <div>
+    <div class="footer_wrap">
+      <router-link to="/find">发现音乐</router-link>
+      <router-link to="/my">我的音乐</router-link>
+      <router-link to="/friend">朋友</router-link>
     </div>
-    <div>
+    <div class="top">
+      <!-- 路由出口 → 匹配的组件所展示的位置 -->
       <router-view></router-view>
     </div>
   </div>
-
 </template>
 
 <script>
-
-// import HelloWorld from './components/HelloWorld.vue'
-// import TestWindow from './components/TestWindow'
-//加入的vue组件都得放入components中
-export default {
-  name: 'App',
-  components: {
-    // HelloWorld,
-    // TestWindow
-  }
-}
+export default {};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+body {
+  margin: 0;
+  padding: 0;
+}
+.footer_wrap {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: flex;
+  width: 100%;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  background-color: #333;
+  color: #ccc;
+}
+.footer_wrap a {
+  flex: 1;
+  text-decoration: none;
+  padding: 20px 0;
+  line-height: 20px;
+  background-color: #333;
+  color: #ccc;
+  border: 1px solid black;
+}
+.footer_wrap a.router-link-active {
+  background-color: purple;
+}
+.footer_wrap a:hover {
+  background-color: #555;
 }
 </style>
